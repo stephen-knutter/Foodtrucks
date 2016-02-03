@@ -4,7 +4,7 @@ class InfoPagesControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success
-    assert_select "title", "Home | FoodTruck Maps"
+    assert_select "title", "FoodTruck Maps"
   end
 
   test "should get privacy" do

@@ -9,8 +9,8 @@ function mapLoad(){
 		zoom: newZoom,
 
 		zoomControlOptions: {
-			style: google.maps.ZoomControlStyle.LARGE,
-			position: google.maps.ControlPosition.BOTTOM_LEFT
+			style: google.maps.ZoomControlStyle.SMALL,
+			position: google.maps.ControlPosition.TOP_RIGHT
 		},
 		scrollwheel: false,
 		scaleControl: false,

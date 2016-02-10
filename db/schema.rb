@@ -11,17 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207224403) do
+ActiveRecord::Schema.define(version: 20160210005327) do
+
+  create_table "maps", force: true do |t|
+    t.string   "city"
+    t.string   "state"
+    t.float    "lat"
+    t.float    "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
+  end
+
+  add_index "maps", ["slug"], name: "index_maps_on_slug"
+
+  create_table "stores", force: true do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "store_type"
+    t.string   "password_digest"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "password_digest"
-    t.string   "type"
-    t.string   "url_name"
-    t.string   "profile_pic"
+    t.string   "profile_pic",     default: "no-profile.png"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

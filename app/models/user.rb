@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
                        #password & password confirmation attributes, including prescence and matching validation
                        #authenticate method, returns user from db when pass is correct
   validates :password, presence: true, length: { minimum: 6 }
+  
 end

@@ -13,4 +13,5 @@ class Store < ActiveRecord::Base
   validates :lat, presence: true, length: { maximum: 11 }
   validates :lng, presence: true, length: { maximum: 11 }
   validates :store_type, presence: true, length: { maximum: 255 }
+  belongs_to :map
 end

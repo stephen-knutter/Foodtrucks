@@ -1,12 +1,7 @@
 <div class="bodyHead clearfix">
 	<h1 class="bodyTitle"><%= @map.city.capitalize %>,&nbsp;<%= @map.state %></h1>
 	<ul class="bodyMenu" id="<%= @map.city.downcase %>">
-		<li><%= link_to "Los Angeles", "#" %></li>
-		<li><%= link_to "San Francisco", "#" %></li>
-		<li><%= link_to "San Jose", "#" %></li>
-		<li><%= link_to "Portland", "#" %></li>
-		<li><%= link_to "Denver", "/maps/denver" %></li>
-		<li><%= link_to "Chicago", "#" %></li>
+		<%= render 'layouts/city_menu' %>
 	</ul>
 </div>
 

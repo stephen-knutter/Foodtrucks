@@ -1,6 +1,6 @@
 module ApplicationHelper
   def do_title(page_title='')
-    base_name = 'FoodTruck Maps'
+    base_name = 'BeerMaps'
     if page_title.empty?
       base_name
     else

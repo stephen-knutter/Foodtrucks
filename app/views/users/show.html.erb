@@ -1,0 +1,14 @@
+<% provide(:title, @user.name) %>
+
+<div class="profileContainer clearfix">
+	
+	<div class="leftCnter">
+		<div class="profilePicWrap">
+			<%= image_tag("no-profile.png", alt: @user.name, class: "profilePic") %>
+		</div>
+	</div>
+	
+	<div class="rightCnter">
+		<h1 class="usernameHead"><%= @user.name %></h1>
+	</div>
+</div>

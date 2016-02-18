@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   
   resources :maps, only: [:show]
+  resources :users # index[GET], show[GET], new[GET]->create[POST](no view), edit[GET]->update[PATCH](no view), destroy[DELETE](no view)
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

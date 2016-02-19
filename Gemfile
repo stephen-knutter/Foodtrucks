@@ -13,6 +13,7 @@ gem 'responders', '~> 2.0'
 gem 'friendly_id', '~> 5.1'
 gem 'gon', '~> 6.0', '>= 6.0.1'
 gem 'rabl-rails', '~> 0.4.1'
+gem 'puma', '2.11.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.9'

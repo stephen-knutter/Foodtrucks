@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+
   get 'users/new'
 
   root 'info_pages#home'
   get 'privacy' => 'info_pages#privacy'
   get 'terms' => 'info_pages#terms'
   get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
   
   resources :maps, only: [:show]
   resources :users # index[GET], show[GET], new[GET]->create[POST](no view), edit[GET]->update[PATCH](no view), destroy[DELETE](no view)

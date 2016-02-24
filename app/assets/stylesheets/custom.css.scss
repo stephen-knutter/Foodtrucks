@@ -54,12 +54,12 @@
 
 /*USER SIGN UP*/
 
-.signUpWrap{
+.signUpWrap, .loginWrap{
 	position: relative;
 	width: 300px;
 }
 
-.signUpWrap input{
+.signUpWrap input, .loginWrap input{
 	width: 100%;
 	display: block;
     margin: 0 0 5px;
@@ -76,11 +76,18 @@
 	@include box_sizing
 }
 
-.signUpWrap label{
+#session_remember_me{
+ width: auto;
+ display: inline;
+ line-height: inherit;
+ margin-right: 5px;
+}
+
+.signUpWrap label, .loginWrap label{
 	font-weight: bold;
 }
 
-.signUpWrap .postBtn{
+.signUpWrap .postBtn, .loginWrap .loginBtn{
 	margin-top: 20px;
 	color: white;
     border-color: #861202;
@@ -109,7 +116,19 @@
 	@include box_sizing;
 }
 
-
+.danger{
+	width: 90%;
+	margin: 0 auto;
+	background-color: #F6DCDD;
+	border-radius: 3px;
+	border: 1px solid #cc0000;
+	text-align: center;
+	position: relative;
+	padding: 10px;
+	margin-bottom: 10px;
+	color: #cc0000;
+	@include box_sizing;
+}
 
 
 

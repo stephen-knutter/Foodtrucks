@@ -1,0 +1,22 @@
+<% provide(:title, 'All beer drinkers')%>
+<h1>Beer Lovers</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+	<% @users.each do |user| %>
+		<li class="clearfix">
+			<div class="thumbWrap">
+				<%= image_tag(user.profile_pic, alt: user.name, class: "userThumb") %>
+			</div>
+			
+				<%= link_to user.name, user, class: "thumbLink" %>
+				
+				<% if current_user.admin? && !current_user?(user) %>
+					<span class="pipe">|</span><%= link_to "Delete", user, class: "deleteLink", method: :delete, data: {confirm: "Are you sure?"}%>
+				<% end %>
+		</li>
+	<% end %>
+</ul>
+
+<%= will_paginate %>

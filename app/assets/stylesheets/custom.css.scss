@@ -4,6 +4,15 @@
 	box-sizing: border-box;
 }
 
+@mixin triple_border{
+	border: 1px solid;
+	border-color: #d7d9dd #d1d3d8 #c3c4c9;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+}
+
 .debug_dump{
 	clear: both;
 	width: 90%;
@@ -29,6 +38,7 @@
 .rightCnter{
 	float: left;
 	width: 75%;
+	padding: 0 0 0 10px;
 	@include box_sizing;
 }
 
@@ -36,8 +46,7 @@
 	width: 190px;
 	height: 190px;
 	padding: 5px;
-	border: 1px solid #CCCCC8;
-	border-radius: 3px;
+	@include triple_border;
 	background-color: #ffffff;
 }
 
@@ -49,17 +58,16 @@
 
 .usernameHead{
 	margin: 0;
-	padding-left: 15px;
 }
 
 /*USER SIGN UP*/
 
-.signUpWrap, .loginWrap{
+.signUpWrap, .loginWrap, .editWrap{
 	position: relative;
 	width: 300px;
 }
 
-.signUpWrap input, .loginWrap input{
+.signUpWrap input, .loginWrap input, .editWrap input{
 	width: 100%;
 	display: block;
     margin: 0 0 5px;
@@ -83,11 +91,11 @@
  margin-right: 5px;
 }
 
-.signUpWrap label, .loginWrap label{
+.signUpWrap label, .loginWrap label, .editWrap label{
 	font-weight: bold;
 }
 
-.signUpWrap .postBtn, .loginWrap .loginBtn{
+.signUpWrap .postBtn, .loginWrap .loginBtn, .editWrap .editBtn{
 	margin-top: 20px;
 	color: white;
     border-color: #861202;
@@ -130,5 +138,71 @@
 	@include box_sizing;
 }
 
+#USERS INDEX
+ul.users{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+		
+	li{
+		padding: 0;
+	}
+}
 
+.thumbLink, .deleteLink, .pipe{
+	color: #3b65a7;
+	text-decoration: none;
+	font-weight: bold;
+	&:hover{
+		text-decoration: underline;
+	}
+	position: relative;
+	top: 15px;
+	left: 5px;
+}
+
+.deleteLink{
+	margin-left: 5px;
+}
+
+.thumbWrap{
+	width: 50px;
+	height: 50px;
+	margin: 5px 0;
+	padding: 5px;
+	background-color: #fff;
+	@include triple_border;
+	float: left;
+	border-radius: 3px;
+}
+
+.userThumb{
+	display: block;
+	margin: 0;
+	width: 50px;
+	height: 50px;
+}
+
+.userlink, .deleteLink{
+	color: #3b65a7;
+}
+
+.deleteWrap{
+	float: left;
+	position: relative;
+	margin: 0;
+}
+
+.deleteLink{
+	clear: both;
+}
+
+.pagination{
+	padding: 5px 0;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	a{
+		color: #000;
+	}
+}
 

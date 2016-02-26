@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
                        #gives hashed password_digest(saved in password_digest column in db), 
                        #password & password confirmation attributes, including prescence and matching validation
                        #authenticate method, returns user from db when password is correct
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, 
+                                                  allow_nil: true #for edit->update....has_secure_password will reject nil for signup
   
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

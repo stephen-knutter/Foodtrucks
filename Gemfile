@@ -14,12 +14,14 @@ gem 'friendly_id', '~> 5.1'
 gem 'gon', '~> 6.0', '>= 6.0.1'
 gem 'rabl-rails', '~> 0.4.1'
 gem 'puma', '2.11.1'
+gem 'will_paginate', '3.0.7'
 
 group :development, :test do
   gem 'sqlite3', '1.3.9'
   gem 'byebug'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring'
+  gem 'faker', '1.4.2'
 end
 
 group :test do

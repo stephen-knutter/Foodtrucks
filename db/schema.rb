@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222201022) do
+ActiveRecord::Schema.define(version: 20160226165338) do
 
   create_table "maps", force: true do |t|
     t.string   "city"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160222201022) do
     t.string   "password_digest"
     t.string   "profile_pic",     default: "no-profile.png"
     t.string   "remember_digest"
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

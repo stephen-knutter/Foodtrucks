@@ -10,5 +10,10 @@
 	
 	<div class="rightCnter">
 		<h1 class="usernameHead"><%= @user.name %></h1>
+		<% if @user == current_user %>
+			<%= link_to "Edit", edit_user_path(@user), class: "userlink" %>
+			&bull;
+			<%= link_to "More Drinkers", users_path, class: "userlink" %>
+		<% end %>
 	</div>
 </div>

@@ -2,4 +2,11 @@
 steve:
     name: Big Dog
     email: hamneggs@toast.com
+    profile_pic: no-profile.png
+    password_digest: <%= User.digest('hamsandwich') %>
+    
+wayne:
+    name: Wayne Gretzkey
+    email: wayne@kings.com
+    profile_pic: no-profile.png
     password_digest: <%= User.digest('hamsandwich') %>

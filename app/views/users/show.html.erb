@@ -4,7 +4,7 @@
 	
 	<div class="leftCnter">
 		<div class="profilePicWrap">
-			<%= image_tag("no-profile.png", alt: @user.name, class: "profilePic") %>
+			<%= image_tag(@user.profile_pic.url(:profile), alt: @user.name, class: "profilePic") %>
 		</div>
 	</div>
 	

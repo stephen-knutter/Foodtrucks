@@ -15,6 +15,7 @@ gem 'gon', '~> 6.0', '>= 6.0.1'
 gem 'rabl-rails', '~> 0.4.1'
 gem 'puma', '2.11.1'
 gem 'will_paginate', '3.0.7'
+gem 'paperclip', '~> 4.3', '>= 4.3.5'
 
 group :development, :test do
   gem 'sqlite3', '1.3.9'

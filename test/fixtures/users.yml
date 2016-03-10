@@ -4,9 +4,15 @@ steve:
     email: hamneggs@toast.com
     profile_pic: no-profile.png
     password_digest: <%= User.digest('hamsandwich') %>
+    admin: true
+    activated: true
+    activated_at: <%= Time.zone.now %>
     
 wayne:
     name: Wayne Gretzkey
     email: wayne@kings.com
     profile_pic: no-profile.png
     password_digest: <%= User.digest('hamsandwich') %>
+    admin: false
+    activated: true
+    activated_at: <%= Time.zone.now %>

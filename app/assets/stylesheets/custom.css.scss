@@ -45,9 +45,24 @@
 .profilePicWrap{
 	width: 190px;
 	height: 190px;
+	margin: 0 auto;
 	padding: 5px;
-	@include triple_border;
-	background-color: #ffffff;
+	@include triple_border
+}
+
+.profilePicBack{
+	width: 100%;
+	border-right: 1px solid #bbb;
+	border-left: 1px solid #bbb;
+	border-top: 1px solid #bbb;
+	border-bottom: 0;
+	background-color: #FAFAF9;
+	@include box_sizing;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	padding: 5px;
 }
 
 .profilePic{
@@ -62,12 +77,12 @@
 
 /*USER SIGN UP*/
 
-.signUpWrap, .loginWrap, .editWrap{
+.signUpWrap, .loginWrap, .editWrap, .forgotWrap{
 	position: relative;
 	width: 300px;
 }
 
-.signUpWrap input, .loginWrap input, .editWrap input{
+.signUpWrap input, .loginWrap input, .editWrap input, .forgotWrap input{
 	width: 100%;
 	display: block;
     margin: 0 0 5px;
@@ -91,11 +106,11 @@
  margin-right: 5px;
 }
 
-.signUpWrap label, .loginWrap label, .editWrap label{
+.signUpWrap label, .loginWrap label, .editWrap label, .forgotWrap label{
 	font-weight: bold;
 }
 
-.signUpWrap .postBtn, .loginWrap .loginBtn, .editWrap .editBtn{
+.signUpWrap .postBtn, .loginWrap .loginBtn, .editWrap .editBtn, .forgotWrap .forgotBtn{
 	margin-top: 20px;
 	color: white;
     border-color: #861202;
@@ -104,6 +119,10 @@
     background: linear-gradient(#d90007, #c91400);
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.editWrap .editBtn, .forgotWrap .forgotBtn{
+	margin-top: 5px;
 }
 
 .errorMsgList{
@@ -207,6 +226,19 @@ ul.users{
 }
 
 #user_profile_pic{
-	margin-top: 5px;
+	margin-top: 0;
 	margin-bottom: 0;
+	border-top: 1px solid #bbb;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+	background-color: #FAFAF9;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.forgotLnk{
+	position: relative;
+	top: -1px;
+	color: #3B99FC;
 }

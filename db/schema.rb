@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229205144) do
+ActiveRecord::Schema.define(version: 20160308150516) do
 
   create_table "maps", force: true do |t|
     t.string   "city"
@@ -53,6 +53,11 @@ ActiveRecord::Schema.define(version: 20160229205144) do
     t.string   "profile_pic_content_type"
     t.integer  "profile_pic_file_size"
     t.datetime "profile_pic_updated_at"
+    t.string   "activation_digest"
+    t.boolean  "activated",                default: false
+    t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,0 +1,13 @@
+<% provide(:title, "Forgot password") %>
+<div class="forgotWrap">
+	<h1 class="signHead">Forgot password</h1>
+	<div class="forgotForm">
+		<%= form_for :password_reset, url: password_resets_path do |f| %>
+			<%= f.label :email %>
+			<%= f.email_field :email, placeholder: "Enter email" %>
+			
+			<%= f.submit "Reset", class: "forgotBtn" %>
+		<% end %>
+	</div>
+</div>
+

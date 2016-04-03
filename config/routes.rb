@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :users # index[GET], show[GET], new[GET]->create[POST](no view), edit[GET]->update[PATCH](no view), destroy[DELETE](no view via ajax)
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :stores, only: [:show, :new, :create, :edit, :update]
+  resources :ratings, only: [:new, :create, :edit, :update]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

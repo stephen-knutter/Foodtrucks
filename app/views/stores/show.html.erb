@@ -1,0 +1,28 @@
+<% provide(:title, @store.name) %>
+
+<div class="profileContainer clearfix">
+	
+	<div class="leftCnter">
+		<div class="profilePicWrap">
+			<%= image_tag(@store.profile_pic.url(:profile), alt: @store.name, class: "profilePic") %>
+		</div>
+	</div>
+	
+	<div class="rightCnter">
+		<h1 class="usernameHead"><%= @store.name %></h1>
+		<div class="info-wrap">
+			<span class="store-address head-text"><%= @store.address %>, <%= @store.city %>, <%= @store.state %></span>
+			<span class="store-phone head-text"></span>
+			<span class="store-website head-text"></span>
+		</div>
+		
+		<%= render 'map' %>
+		
+		<% if current_user %>
+			<%= render 'rate' %>
+		<% else %>
+			<%= render 'rate' %>
+			<!-- RENDER _sign_up.html.erb BELOW -->
+		<% end %>
+	</div>
+</div>

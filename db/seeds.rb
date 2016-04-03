@@ -23,3 +23,15 @@ User.create!(name: "Wayne Gretzkey",
                password: password,
                password_confirmation: password)
 end
+
+Store.create!(name: "Denver Beer Co",
+              email: "NULL",
+              address: "1695 Platte St",
+              city: "Denver",
+              state: "Colorado",
+              lat: 39.75823,
+              lng: -105.00711,
+              store_type: "devdtn",
+              password: "hamsandwich",
+              password_confirmation: "hamsandwich",
+              map_id: 1)

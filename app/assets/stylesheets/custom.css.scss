@@ -13,12 +13,25 @@
 	-o-border-radius: 3px;
 }
 
+@mixin brown_border{
+	border: 1px solid;
+	border-color: #dfd1b9 #d7c6a7 #d0ba95;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.loginHead{
+	color: #C30C0C;
+}
+
 .debug_dump{
 	clear: both;
 	width: 90%;
 	padding: 10px;
 	margin: 45px auto;
-	border: 1px solid #c7c7c7;
+	@include brown_border;
+	color: #A97D5D;
 	border-radius: 3px;
 	@include box_sizing;
 }
@@ -38,16 +51,18 @@
 .rightCnter{
 	float: left;
 	width: 75%;
-	padding: 0 0 0 10px;
+	padding: 0 20px 10px 20px;
 	@include box_sizing;
 }
 
 .profilePicWrap{
-	width: 190px;
-	height: 190px;
+	width: 200px;
+	height: 180px;
 	margin: 0 auto;
 	padding: 5px;
-	@include triple_border
+	@include brown_border;
+	background-color: #F6F2EB;
+	position: relative;
 }
 
 .profilePicBack{
@@ -67,12 +82,15 @@
 
 .profilePic{
 	display: block;
-	width: 190px;
-	height: 190px;
+	position: relative;
+	width: 200px;
+	height: 180px;
+	@include box_sizing;
 }
 
 .usernameHead{
 	margin: 0;
+	color: #C30C0C;
 }
 
 /*USER SIGN UP*/
@@ -110,7 +128,7 @@
 	font-weight: bold;
 }
 
-.signUpWrap .postBtn, .loginWrap .loginBtn, .editWrap .editBtn, .forgotWrap .forgotBtn{
+.signUpWrap .postBtn, .loginWrap .loginBtn, .editWrap .editBtn, .forgotWrap .forgotBtn, .redBtn{
 	margin-top: 20px;
 	color: white;
     border-color: #861202;
@@ -119,6 +137,12 @@
     background: linear-gradient(#d90007, #c91400);
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.redBtn{
+	padding: 5px 35px;
+	text-decoration: none;
+	border-radius: 5px;
 }
 
 .editWrap .editBtn, .forgotWrap .forgotBtn{
@@ -189,8 +213,8 @@ ul.users{
 	height: 50px;
 	margin: 5px 0;
 	padding: 5px;
-	background-color: #fff;
-	@include triple_border;
+	background-color: #F2F0ED;
+	@include brown_border;
 	float: left;
 	border-radius: 3px;
 }
@@ -204,6 +228,7 @@ ul.users{
 
 .userlink, .deleteLink{
 	color: #3b65a7;
+	margin-left: 2px;
 }
 
 .deleteWrap{
@@ -241,4 +266,25 @@ ul.users{
 	position: relative;
 	top: -1px;
 	color: #3B99FC;
+}
+
+#logBox, .rateWrap{
+	border: 1px solid brown;
+	width: 100%;
+	margin: 20px 0;
+	border-radius: 3px;
+	@include brown_border;
+	padding: 10px;
+	text-align: center;
+}
+
+.rateWrap{
+	text-align: none;
+}
+
+.question{
+  	margin: 0 0 12px 0;
+	color: #A97D5D;
+	font-size: 14px;
+	font-family: georgia, sans-serif;
 }

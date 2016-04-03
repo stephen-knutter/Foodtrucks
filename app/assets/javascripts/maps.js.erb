@@ -1,0 +1,77 @@
+function mapLoad(){
+	var iMap = document.getElementById("gmap");
+	var zAttributes = iMap.getAttribute("data-map");
+	var iType = iMap.getAttribute("data-type");
+	var iZoom = iMap.getAttribute("data-zoom");
+	
+	var lat = zAttributes.split("|")[0];
+	var lng = zAttributes.split("|")[1];
+	
+	var newCenter = new google.maps.LatLng(lat, lng);
+	var newZoom = parseInt(iZoom);
+	
+	var mapType = 'region';
+
+	var map = new google.maps.Map(iMap, {
+		center: newCenter,
+		zoom: newZoom,
+
+		zoomControlOptions: {
+			style: google.maps.ZoomControlStyle.SMALL,
+			position: google.maps.ControlPosition.TOP_RIGHT
+		},
+		scrollwheel: false,
+		scaleControl: false,
+		streetViewControl: true,
+		panControl: false,
+		mapTypeControl: false,
+		mapTypeId: 'roadmap'
+	});
+	
+	var iStoreNum = gon.store.length || 1
+	if(iType == 'profile'){
+		var lat = gon.store.lat
+		var lng = gon.store.lng
+		var point = new google.maps.LatLng(
+			lat,lng
+		);
+		var marker = new google.maps.Marker({
+			map: map,
+			position: point,
+			icon: "<%= asset_path 'beermap-marker.png' %>"
+		})
+	} else {
+		for(i=0; i < iStoreNum; i++){
+			//console.log(gon.stores[i].name + "," + gon.stores[i].lat + "," + gon.stores[i].lng
+			var id = gon.store[i].id
+			var name = "<a data-method='get' href='/stores/"+id+"'>"+gon.store[i].name+"</a>"
+			var lat = gon.store[i].lat
+			var lng = gon.store[i].lng
+			var point = new google.maps.LatLng(
+				 lat,lng
+			);
+			var marker = new google.maps.Marker({
+				map: map,
+				position: point,
+				icon: "<%= asset_path  'beermap-marker.png' %>",
+				title: name
+			});
+
+			bindInfoWindow(marker, name, map);
+		}
+	}
+	
+}
+
+function bindInfoWindow(marker, name, map){
+	
+	var infowindow = new google.maps.InfoWindow({
+		content: name
+	})
+	
+	google.maps.event.addListener(marker, 'click', function(){
+		infowindow.open(map,marker);
+	});
+}
+
+google.maps.event.addDomListener(window, "load", mapLoad);

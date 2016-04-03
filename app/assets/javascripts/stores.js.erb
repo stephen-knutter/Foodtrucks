@@ -1,0 +1,42 @@
+
+$(function(){
+	//HIGHLIGHT COMMENT AREA
+	var zComment = $(".rating-wrap");
+	var iTextBox = $("#comment");
+	zComment.on("mouseenter", function(){
+		zComment.find("div").andSelf().find("textarea").andSelf().css("background-color", "#fff");
+	})
+	zComment.on("mouseleave", function(){
+		zComment.find("div").andSelf().find("textarea").andSelf().css("background-color", "#F6F2EB");
+	})
+	
+	
+	
+	//GET STAR LIST
+	var iStars = $("ul#starList");
+	var iList = iStars.children("li");
+	var iDefault = "stars-0";
+	
+	//HIGHLIGHT STARS ON HOVER
+	iList.hover(function(){
+		zItem = $(this);
+		zId = zItem.attr("id");
+		
+		iStars.attr("class", zId);
+	}, function(){
+		iStars.attr("class", iDefault);
+	})
+	
+	//SET STAR VALUE
+	iList.on("click", function(){
+		aItem = $(this);
+		aId = aItem.attr("id");
+		iDefault = aId;
+		
+		oInputs = iList.find("input.rating");
+		oInputs.attr("checked",false);
+		oInput = aItem.find("input.rating");
+		oInput.attr("checked",true);
+		
+	})
+})

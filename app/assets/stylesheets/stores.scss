@@ -1,3 +1,154 @@
 // Place all the styles related to the stores controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin brown_border{
+	border: 1px solid;
+	border-color: #dfd1b9 #d7c6a7 #d0ba95;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+@mixin gray_border{
+	border: 1px solid;
+	border-color: #d7d9dd #d1d3d8 #c3c4c9;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+}
+
+@mixin border_radius_5{
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+@mixin border_radius_3{
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+}
+
+#starList{
+	height: 37px;
+	width: 170px;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+#starList li{
+	float: left;
+	width: 30px;
+	height: 37px;
+	margin: 0 1px;
+}
+
+#starsList li:hover{
+	cursor: pointer;
+}
+
+.stars-0{
+	background: url('stars_big.png') 0 6px no-repeat;
+}
+
+.stars-1{
+	background: url('stars_big.png') 0 -30px no-repeat;
+}
+
+.stars-2{
+	background: url('stars_big.png') 0 -66px no-repeat;
+}
+
+.stars-3{
+	background: url('stars_big.png') 0 -102px no-repeat;
+}
+
+.stars-4{
+	background: url('stars_big.png') 0 -138px no-repeat;
+}
+
+.stars-5{
+	background: url('stars_big.png') 0 -174px no-repeat;
+}
+
+.rating{
+	display: none;
+}
+
+.rating-wrap{
+	position: relative;
+	background-color: #F6F2EB;
+	@include box_sizing;
+	@include border_radius_5;
+	@include brown_border;
+	padding: 10px;
+}
+
+.stars{
+	border-bottom: 1px solid #dfd1b9;
+	padding-bottom: 10px;
+}
+
+.text-wrap{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#comment{
+	width: 100%;
+	height: 80px;
+	border: none;
+	outline: none;
+	resize: none;
+	@include box_sizing;
+	padding: 5px;
+	background-color: #F6F2EB;
+	font-size: 13px;
+}
+
+#mapWrapStore{
+	margin: 10px 0;
+	border: 1px solid #c7c7c7;
+	@include border_radius_3;
+	background-color: #ddd;
+}
+
+#mapWrapStore div#gmap{
+	height: 200px;
+	@include border_radius_3;
+}
+
+.info-wrap{
+	margin-top: 5px;
+}
+
+.head-text{
+	font-size: 12px;
+	color: #A97D5D;
+	margin: 1px 0;
+	padding: 5px;
+	@include box_sizing;
+}
+
+.head-text:last-child{
+	border-bottom: none;
+}
+
+.store-address{
+	padding-left: 20px;
+}
+
+.store-address{
+	background: url('address-icon.png') 0 45% no-repeat;
+}

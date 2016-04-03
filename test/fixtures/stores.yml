@@ -4,3 +4,17 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+beerco:
+    name: Beer Co
+    email: beerco@beerco.com
+    address: 123 beer st
+    city: Denver
+    state: Colorado
+    lat: 39.75823
+    lng: -105.00711
+    store_type: devdtn
+    password_digest: <%= User.digest('hamsandwich') %>
+    map_id: 1
+    profile_pic: no-brewery.png
+    slug: beerco

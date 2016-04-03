@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308150516) do
+ActiveRecord::Schema.define(version: 20160321035507) do
 
   create_table "maps", force: true do |t|
     t.string   "city"
@@ -25,9 +25,18 @@ ActiveRecord::Schema.define(version: 20160308150516) do
 
   add_index "maps", ["slug"], name: "index_maps_on_slug"
 
+  create_table "ratings", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "stores", force: true do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "name"
     t.string   "email"
     t.string   "address"
@@ -38,6 +47,12 @@ ActiveRecord::Schema.define(version: 20160308150516) do
     t.string   "store_type"
     t.string   "password_digest"
     t.integer  "map_id"
+    t.string   "profile_pic_file_name"
+    t.string   "profile_pic_content_type"
+    t.integer  "profile_pic_file_size"
+    t.datetime "profile_pic_updated_at"
+    t.string   "profile_pic"
+    t.string   "slug"
   end
 
   create_table "users", force: true do |t|
@@ -58,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160308150516) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.integer  "store_id",                 default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

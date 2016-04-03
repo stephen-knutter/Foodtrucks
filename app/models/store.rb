@@ -7,6 +7,11 @@ class Store < ActiveRecord::Base
                       #gives hashed password_digest(saved in password_digest column in db), 
                       #password & password confirmation attributes, including prescence and matching validation
                       #authenticate method, returns user from db when pass is correct 
+  has_attached_file :profile_pic,
+                     default_url: ":style-no-brew.png",
+                     style: {profile: "190X190#", thumb: "45X45#"},
+                     url: "/assets/stores/:id/:style/:basename/.:extension"
+  validates_attachment_content_type :profile_pic, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   validates :password, presence: true, length: { minimum: 6 }
   validates :city, presence: true, length: { maximum: 255 }
   validates :state, presence: true, length: { maximum: 255 }

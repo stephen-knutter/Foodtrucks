@@ -60,6 +60,19 @@ html, body{
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 11px;
 	background-color: #F5F5F1;
+	background-color: #F6F2EB;
+	background-color: #F4E7D0;
+}
+
+.brownBorders{
+	border: 1px solid;
+	border-color: #dfd1b9 #d7c6a7 #d0ba95;
+}
+
+
+
+.pagination, .pagination a{
+	color: #A97D5D;
 }
 
 .container{
@@ -67,7 +80,8 @@ html, body{
 	padding: 20px;
 	margin: 0 auto;
 	background-color: #fff;
-	border: 1px solid #CCCCC8;
+	background-color: #F6F2EB;
+	/*border: 1px solid #CCCCC8;*/
 	border-radius: 3px;
 	position: relative;
 	top: -2px;
@@ -87,15 +101,10 @@ html, body{
 header{
 	margin: 0;
 	padding:20px 0;
-	height: 56px;
+	height: 20px;
 	position: relative;
 	width: 100%;
-	background: #c21100; /* Old browsers */
-	background: -moz-linear-gradient(top,  #c21100 0%, #af0606 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  #c21100 0%,#af0606 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  #c21100 0%,#af0606 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c21100', endColorstr='#af0606',GradientType=0 ); /* IE6-9 */
-	-webkit-box-shadow: 0 0 5px rgba(78,2,2,0.76);
+	background-color: #C30C0C;
     box-shadow: 0 0 5px rgba(78,2,2,0.76);
     border-bottom: 1px solid #900903;
 	z-index: 1;
@@ -117,7 +126,7 @@ header{
 	width: 250px;
 	display: inline;
 	position: relative;
-	top: 5px;
+	top:-15px;
 }
 
 #headLogo h1{
@@ -136,7 +145,7 @@ nav{
 #navList{
 	float: left;
 	position: relative;
-	top: 20px;
+	top: -1px;
 }
 
 #navList li{
@@ -147,22 +156,15 @@ nav{
 	border-radius: 3px;
 }
 
-#navList li:hover{
-	cursor: pointer;
-	padding: 4px;
-	border-bottom: 1px solid rgba(255,255,255,.3);
-	border-left: 1px solid rgba(0,0,0,.1);
-	border-right: 1px solid rgba(0,0,0,.1);
-	border-top: 1px solid rgba(0,0,0,.2);
-	border: 1px solid #900903;
-}
-
 #navList li a{
 	color: #fff;
-	font-size: 13px;
+	font-size: 12px;
 	text-decoration: none;
 	text-shadow: 0 -1px 0 #760400;
 	font-weight: bold;
+}
+
+.homeLink{
 }
 
 #search{
@@ -173,7 +175,7 @@ nav{
 	border: 1px solid #900903;
 	font-size: 12px;
 	position: relative;
-	top: -10px;
+	top: -12px;
 	left: -75px;
 }
 
@@ -193,6 +195,7 @@ nav{
 	float: left;
 	margin: 0;
 	padding-bottom: 10px;
+	color: #C30C0C;
 }
 
 .bodyMenu{
@@ -215,7 +218,6 @@ nav{
 .bodyMenu li a{
 	text-decoration: none;
 	color: #3b65a7;
-	font-weight: bold;
 	font-size: 12px;
 }
 
@@ -254,12 +256,12 @@ nav{
 	list-style: none;
 	float: left;
 	margin: 0 5px;
-	color: #666;
+	color: #A97D5D;
 }
 
 #footer ul li a{
 	text-decoration: none;
-	color: #666;
+	color: #A97D5D;
 }
 
 .signHead{

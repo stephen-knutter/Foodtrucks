@@ -19,10 +19,13 @@
 		<%= render 'map' %>
 		
 		<% if current_user %>
-			<%= render 'rate' %>
+			<% if @rating %>
+				<%= render 'rated' %>
+			<% else %>
+				<%= render 'rate' %>
+			<% end %>
 		<% else %>
-			<%= render 'rate' %>
-			<!-- RENDER _sign_up.html.erb BELOW -->
+			<%= render 'sign_up' %>
 		<% end %>
 	</div>
 </div>

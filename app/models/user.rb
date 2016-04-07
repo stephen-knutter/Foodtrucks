@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
                     #validates_attachment_presence :profile_pic
                     #validates_attachment_size :profile_pic, less_than: 100.megabytes
   validates_attachment_content_type :profile_pic, content_type: ["image/jpeg", "image/jpg", "image/png", "image/gif"]
+  has_many :ratings
   
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

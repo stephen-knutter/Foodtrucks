@@ -19,4 +19,11 @@ class Store < ActiveRecord::Base
   validates :lng, presence: true, length: { maximum: 11 }
   validates :store_type, presence: true, length: { maximum: 255 }
   belongs_to :map
+  has_many :ratings
+end
+
+
+def Store.digest(string)
+  cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+  BCrypt::Password.create(string, cost: cost)
 end

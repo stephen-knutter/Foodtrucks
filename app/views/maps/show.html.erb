@@ -4,8 +4,4 @@
 		<%= render 'layouts/city_menu' %>
 	</ul>
 </div>
-
-
-<div id="mapWrap">
-	<div id="gmap" data-map="<%= "#{@map.lat}|#{@map.lng}"%>" data-type="all" data-zoom=11></div>
-</div>
+<%= render 'map' %>

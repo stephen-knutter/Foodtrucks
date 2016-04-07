@@ -7,14 +7,13 @@
 
 beerco:
     name: Beer Co
-    email: beerco@beerco.com
+    email: hamneggs@toast.com
     address: 123 beer st
     city: Denver
     state: Colorado
     lat: 39.75823
     lng: -105.00711
     store_type: devdtn
-    password_digest: <%= User.digest('hamsandwich') %>
+    password_digest: "$2a$10$JjJVAlEb2.MAAZQHgP/6h.43E47Di3TpoQu8nfW7SVSv46CecGpRS"
     map_id: 1
     profile_pic: no-brewery.png
-    slug: beerco

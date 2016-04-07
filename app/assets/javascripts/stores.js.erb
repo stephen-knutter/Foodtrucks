@@ -15,7 +15,7 @@ $(function(){
 	//GET STAR LIST
 	var iStars = $("ul#starList");
 	var iList = iStars.children("li");
-	var iDefault = "stars-0";
+	var iDefault = iStars.attr("class") // ex) stars-0
 	
 	//HIGHLIGHT STARS ON HOVER
 	iList.hover(function(){

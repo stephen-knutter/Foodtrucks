@@ -4,8 +4,9 @@ function mapLoad(){
 	var iType = iMap.getAttribute("data-type");
 	var iZoom = iMap.getAttribute("data-zoom");
 	
-	var lat = zAttributes.split("|")[0];
-	var lng = zAttributes.split("|")[1];
+	var iLatLng = zAttributes.split("|");
+	var lat = iLatLng[0];
+	var lng = iLatLng[1];
 	
 	var newCenter = new google.maps.LatLng(lat, lng);
 	var newZoom = parseInt(iZoom);

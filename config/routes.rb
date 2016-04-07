@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   
   get 'password_resets/new'
-
   get 'password_resets/edit'
-
   get 'sessions/new'
-
-  get 'users/new'
+  get 'users/new' 
 
   root 'info_pages#home'
   get 'privacy' => 'info_pages#privacy'
@@ -16,11 +13,10 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   
+  resources :users, :stores # index[GET], show[GET], new[GET]->create[POST](no view), edit[GET]->update[PATCH](no view), destroy[DELETE](no view via ajax)
   resources :maps, only: [:show]
-  resources :users # index[GET], show[GET], new[GET]->create[POST](no view), edit[GET]->update[PATCH](no view), destroy[DELETE](no view via ajax)
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :stores, only: [:show, :new, :create, :edit, :update]
   resources :ratings, only: [:new, :create, :edit, :update]
   
   # The priority is based upon order of creation: first created -> highest priority.

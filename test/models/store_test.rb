@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class StoreTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   def setup
     @store = Store.new(name:"Foodtruck", email:"hamneggs@gmail.com", 
                     password: "eggsandwich", password_confirmation: "eggsandwich", 

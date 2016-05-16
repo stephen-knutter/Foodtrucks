@@ -1,0 +1,2 @@
+module HoursControllerHelper
+end

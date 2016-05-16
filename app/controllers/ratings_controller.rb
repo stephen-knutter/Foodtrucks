@@ -1,4 +1,5 @@
 class RatingsController < ApplicationController
+    before_action :logged_in_user, only: [:create,:update]
     
     def create
        @rating = Rating.new(rating_params)

@@ -6,12 +6,22 @@
 		<div class="profilePicWrap">
 			<%= image_tag(@store.profile_pic.url(:profile), alt: @store.name, class: "profilePic") %>
 		</div>
+		<% if current_user && !current_user.store_admin %>
+			<div class="claimWrap">
+				<i class="fa fa-hand-o-up"></i><%= link_to "Claim this brewery", new_store_path, class: "claimLink" %>
+			</div>
+		<% elsif current_user && current_user.store_admin && current_user.store_id == @store.id %>
+			<div class="claimWrap">
+				<i class="fa fa-pencil"></i><%= link_to "Edit #{@store.name}", edit_store_path(@store), class: "claimLink", method: :get %>
+			</div>
+		<% end %>
+		<%= render 'times' %>
 	</div>
 	
 	<div class="rightCnter">
 		<h1 class="usernameHead"><%= @store.name %></h1>
 		<div class="info-wrap">
-			<span class="store-address head-text"><%= @store.address %>, <%= @store.city %>, <%= @store.state %></span>
+			<span class="store-address head-text"><i class="fa fa-industry"></i><%= @store.address %>, <%= @store.city %>, <%= @store.state %>&nbsp;<span class="starhead star-<%= @store.ratings.sum(:rating) %>"><%= pluralize(@store.ratings.count, "Review") %></span></span>
 			<span class="store-phone head-text"></span>
 			<span class="store-website head-text"></span>
 		</div>
@@ -27,5 +37,7 @@
 		<% else %>
 			<%= render 'sign_up' %>
 		<% end %>
+		
+		<%= render 'store_feed' %>
 	</div>
 </div>

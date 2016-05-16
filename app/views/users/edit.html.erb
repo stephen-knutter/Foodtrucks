@@ -20,7 +20,7 @@
 			
 			<div class="profilePicBack">
 				<div class="profilePicWrap">
-				 	<%= image_tag(@user.profile_pic.url(:profile), alt: @user.name, class: "profilePic")%> 
+				 	<%= image_tag(@user.profile_pic.url(:profile), alt: @user.name, class: "profilePic picPreview") %> 
 				</div>
 			</div>
 			<%= f.file_field :profile_pic, class: "uploadPic" %>

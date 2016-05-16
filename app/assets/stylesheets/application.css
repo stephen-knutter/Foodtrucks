@@ -69,7 +69,15 @@ html, body{
 	border-color: #dfd1b9 #d7c6a7 #d0ba95;
 }
 
+.mapLink{
+	text-decoration: none;
+	font-weight: 600;
+	color: #3b65a7;
+}
 
+.mapLink:hover{
+	text-decoration: underline;
+}
 
 .pagination, .pagination a{
 	color: #A97D5D;
@@ -177,6 +185,7 @@ nav{
 	position: relative;
 	top: -12px;
 	left: -75px;
+	outline: none;
 }
 
 #navList li#searchList:hover{

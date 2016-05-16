@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/*ICONS*/
+	i.fa.fa-industry{
+		margin-right: 2px;
+		color: #d0ba95;
+		font-size: 19px;
+	}
+	i.fa.fa-hand-o-up, i.fa.fa-pencil{
+		color: #3b65a7;
+		font-size: 15px;
+		margin-right: 2px;
+	}
+
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -146,9 +159,121 @@
 }
 
 .store-address{
-	padding-left: 20px;
+	/*padding-left: 20px;*/
+	/*background: url('address-icon.png') 0 45% no-repeat;*/
 }
 
-.store-address{
-	background: url('address-icon.png') 0 45% no-repeat;
+.feedWrap{
+	padding-top: 2px;
+	margin-top: 10px;
+	border-top: 1px solid #dfd1b9;
+}
+
+.feedWrap .thumbLink, .feedWrap .userLink{
+	top: 5px;
+}
+
+.feedLeft{
+	float: left;
+	width: 40%;
+	@include box_sizing;
+}
+
+.feedRight{
+	float: right;
+	width: 60%;
+	@include box_sizing;
+	padding-left: 5px;
+}
+
+.commentText{
+	margin: 1px 0;
+	position: relative;
+	left: 5px;
+	padding: 0;
+	font-size: 12px;
+}
+
+.claimWrap{
+	text-align: center;
+	margin: 0;
+}
+
+.claimLink{
+	color: #3b65a7;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+.star, .starhead{
+	display: inline-block;
+	height: 18px;
+	padding-left: 90px;
+	position: relative;
+	top: 5px;
+	left: 5px;
+}
+
+.starhead{
+	top: 0;
+	left: 0;
+}
+
+.star-5{
+	background: url('stars_all.png') 0 -165px no-repeat;
+}
+
+.star-4{
+	background: url('stars_all.png') 0 -129px no-repeat;
+}
+
+.star-3{
+	background: url('stars_all.png') 0 -93px no-repeat;
+}
+
+.star-2{
+	background: url('stars_all.png') 0 -57px no-repeat;
+}
+
+.star-1{
+	background: url('stars_all.png') 0 -21px no-repeat;
+}
+
+.timeWrap{
+	margin: 5px 0;
+}
+
+.timeLabel{
+	display: inline-block;
+	width: 100px;
+}
+
+.openclose{
+	display: inline-block;
+	width: 75px;
+}
+
+.closed{
+	padding-left: 2px;
+}
+
+.time-day{
+	display: inline-block;
+	width: 75px;
+}
+
+ul.time-listings{
+	background-color: #dfd1b9;
+	background-color: #e9d4b3;
+	@include box_sizing;
+	@include border_radius_3;
+	padding: 4px 7px;
+	margin: 10px 0;
+}
+
+li.time-list{
+	color: #A97D5D;
+	margin: 3px 0;
 }

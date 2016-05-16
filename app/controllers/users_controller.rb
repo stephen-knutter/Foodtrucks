@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
@@ -10,6 +9,11 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+  end
+  
+  def photos
+    @user = User.find(params[:id])
+    @photo = current_user.photos.build if logged_in?
   end
   
   def new
@@ -54,17 +58,9 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :profile_pic, :password, :password_confirmation)
     end
     
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Must log in to view"
-        redirect_to login_url
-      end
-    end
-    
     def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+     @user = User.find(params[:id])
+     redirect_to(root_url) unless current_user?(@user)
     end
     
     def admin_user

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
   get 'sessions/new'
   get 'users/new' 
+  get  '/users/:id/photos', to: 'users#photos'
 
   root 'info_pages#home'
   get 'privacy' => 'info_pages#privacy'
@@ -14,10 +15,12 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   
   resources :users, :stores # index[GET], show[GET], new[GET]->create[POST](no view), edit[GET]->update[PATCH](no view), destroy[DELETE](no view via ajax)
+  resources :photos, only: [:create, :destroy]
   resources :maps, only: [:show]
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :ratings, only: [:new, :create, :edit, :update]
+  resources :hours, only: [:new, :create, :edit, :update]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

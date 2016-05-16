@@ -84,29 +84,14 @@ class StoreTest < ActiveSupport::TestCase
      @store.state = "a" * 256
      assert_not @store.valid?
     end
-    
-    test "latitude should not be blank" do
-       @store.lat = "  "
-       assert_not @store.valid?
-      end
 
     test "latitude should not be more than 11 chars" do
       @store.lat = 12.34567891011
       assert_not @store.valid?
     end
-      
-    test "longitude should not be blank" do
-      @store.lng = "  "
-      assert_not @store.valid?
-    end
 
     test "longitude should not be more than 11 chars" do
       @store.lng = -112.34567891011
-      assert_not @store.valid?
-    end
-    
-    test "store type should not be blank" do
-      @store.store_type = "  "
       assert_not @store.valid?
     end
 
@@ -115,23 +100,3 @@ class StoreTest < ActiveSupport::TestCase
       assert_not @store.valid?
     end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

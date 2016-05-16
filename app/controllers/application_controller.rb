@@ -13,4 +13,16 @@ class ApplicationController < ActionController::Base
   def clear_gon
     Thread.current['gon'] = nil
   end
+  
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Must be logged in"
+      redirect_to login_url
+    end
+  end
+  
+  def check_user_admin
+    redirect_to root_url unless current_user.store_admin
+  end
 end

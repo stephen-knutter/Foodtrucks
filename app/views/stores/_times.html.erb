@@ -1,0 +1,55 @@
+<% @store.hours.each do |t| %>
+<% #strftime("%I:%M%p") %>
+<% days= ["mon","tue","wed","thu","fri","sat","sun"] %>
+ <ul class="time-listings">
+	<!-- MONDAY -->
+    <li class="time-list">
+		<b class="time-day">Mon:</b>
+		<span><%= t.mon_o_hour %></span><span>:</span><span><%= t.mon_o_min %></span><span><%= t.mon_o_meridiem%></span>
+		<span> - </span>
+		<span><%= t.mon_c_hour %></span><span>:</span><span><%= t.mon_c_min %></span><span><%= t.mon_c_meridiem%></span>
+	</li>
+	<!-- TUESDAY -->
+	<li class="time-list">
+		<b class="time-day">Tue:</b>
+		<span><%= t.tue_o_hour %></span><span>:</span><span><%= t.tue_o_min %></span><span><%= t.tue_o_meridiem%></span>
+		<span> - </span>
+		<span><%= t.tue_c_hour %></span><span>:</span><span><%= t.tue_c_min %></span><span><%= t.tue_c_meridiem%></span>
+	</li>
+	<!-- WEDNESDAY -->
+	<li class="time-list">
+		<b class="time-day">Wed:</b>
+		<span><%= t.wed_o_hour %></span><span>:</span><span><%= t.wed_o_min %></span><span><%= t.wed_o_meridiem%></span>
+		<span> - </span>
+		<span><%= t.wed_c_hour %></span><span>:</span><span><%= t.wed_c_min %></span><span><%= t.wed_c_meridiem%></span>
+	</li>
+	<!-- THURSDAY -->
+	<li class="time-list">
+		<b class="time-day">Thu:</b>
+		<span><%= t.thu_o_hour %></span><span>:</span><span><%= t.thu_o_min %></span><span><%= t.thu_o_meridiem%></span>
+		<span> - </span>
+		<span><%= t.thu_c_hour %></span><span>:</span><span><%= t.thu_c_min %></span><span><%= t.thu_c_meridiem%></span>
+	</li>
+	<!-- FRIDAY -->
+	<li class="time-list">
+		<b class="time-day">Fri:</b>
+		<span><%= t.fri_o_hour %></span><span>:</span><span><%= t.fri_o_min %></span><span><%= t.fri_o_meridiem%></span>
+		<span> - </span>
+		<span><%= t.fri_c_hour %></span><span>:</span><span><%= t.fri_c_min %></span><span><%= t.fri_c_meridiem%></span>
+	</li>
+	<!-- SATURDAY -->
+	<li class="time-list">
+		<b class="time-day">Sat:</b>
+		<span><%= t.sat_o_hour %></span><span>:</span><span><%= t.sat_o_min %></span><span><%= t.sat_o_meridiem%></span>
+		<span> - </span>
+		<span><%= t.sat_c_hour %></span><span>:</span><span><%= t.sat_c_min %></span><span><%= t.sat_c_meridiem%></span>
+	</li>
+	<!-- SUNDAY -->
+	<li class="time-list">
+		<b class="time-day">Sun:</b>
+		<span><%= t.sun_o_hour %></span><span>:</span><span><%= t.sun_o_min %></span><span><%= t.sun_o_meridiem%></span>
+		<span> - </span>
+		<span><%= t.sun_c_hour %></span><span>:</span><span><%= t.sun_c_min %></span><span><%= t.sun_c_meridiem%></span>
+	</li>
+ </ul>
+<% end %>

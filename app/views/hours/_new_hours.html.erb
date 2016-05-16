@@ -1,0 +1,61 @@
+<% days = ["mon","tue","wed","thu","fri","sat","sun"] %>
+<%= form_for :hours, url: hours_path do |f| %>
+	<%= hidden_field_tag :store_id, @store.id %>
+	<% days.each do |day| %>
+	<div class="timeWrap">
+		<label class="timeLabel"><b><%= day %></b></label>
+		<div class="open">
+			<span class="openclose">Open:</span>
+			<select name="<%= day.downcase %>_o_hour">
+				<% (1..9).each do |i| %>
+					<option value="0<%= i %>">0<%= i %></option>
+				<% end %>
+				<% (10..12).each do |i| %>
+					<option value="<%= i %>"><%= i %></option>
+				<% end %>
+			</select>
+			<b>:</b>
+			<select name="<%= day.downcase %>_o_min">
+				<% (0..9).each do |i| %>
+					<option value="0<%= i %>">0<%= i %></option>
+				<% end %>
+				<% (10..59).each do |i| %>
+					<option value=<%= i %>><%= i %></option>
+				<% end %>
+			</select>
+			<b>-</b>
+			<select name="<%= day.downcase %>_o_meridiem">
+				<option value="am">AM</option>
+				<option value="pm">PM</option>
+			</select>
+			<%= check_box_tag "#{day.downcase}_closed" %><span class="closed">Closed?</span>
+		</div>
+		<div class="close">
+			<span class="openclose">Close:</span>
+			<select name="<%= day.downcase %>_c_hour">
+				<% (1..9).each do |i| %>
+					<option value="0<%= i %>">0<%= i %></option>
+				<% end %>
+				<% (10..12).each do |i| %>
+					<option value="<%= i %>"><%= i %></option>
+				<% end %>
+			</select>
+			<b>:</b>
+			<select name="<%= day.downcase %>_c_min">
+				<% (0..9).each do |i| %>
+					<option value="0<%= i %>">0<%= i %></option>
+				<% end %>
+				<% (10..59).each do |i| %>
+					<option value="<%= i %>"><%= i %></option>
+				<% end %>
+			</select>
+			<b>-</b>
+			<select name="<%= day.downcase %>_c_meridiem">
+				<option value="am">AM</option>
+				<option value="pm">PM</option>
+			</select>
+		</div>
+	<% end %>
+	<%= f.submit "Add hours", class: "editBtn" %>
+	</div>
+<% end %>

@@ -3,17 +3,11 @@
 <div class="profileContainer clearfix">
 	
 	<div class="leftCnter">
-		<div class="profilePicWrap">
-			<%= image_tag(@user.profile_pic.url(:profile), alt: @user.name, class: "profilePic") %>
-		</div>
+		<%= render 'user_left_pane', select: {ratings: true, photos: false} %>
 	</div>
 	
 	<div class="rightCnter">
-		<h1 class="usernameHead"><%= @user.name %></h1>
-		<% if @user == current_user %>
-			<%= link_to "Edit", edit_user_path(@user), class: "userlink" %>
-			&bull;
-			<%= link_to "More Drinkers", users_path, class: "userlink" %>
-		<% end %>
+		<%= render 'user_right_pane' %>
+		<%= render 'user_feed' %>
 	</div>
 </div>

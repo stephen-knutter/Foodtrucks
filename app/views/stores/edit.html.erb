@@ -1,0 +1,7 @@
+<% provide(:title, @store.name) %>
+
+<% if current_user.admin %>
+	<%= render 'admin' %>
+<% elsif current_user.store_admin %>
+	<%= render 'store_admin' %>
+<% end %>

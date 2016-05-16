@@ -45,7 +45,7 @@ function mapLoad(){
 		for(i=0; i < iStoreNum; i++){
 			//console.log(gon.stores[i].name + "," + gon.stores[i].lat + "," + gon.stores[i].lng
 			var id = gon.store[i].id
-			var name = "<a data-method='get' href='/stores/"+id+"'>"+gon.store[i].name+"</a>"
+			var name = "<a class='mapLink' data-method='get' href='/stores/"+id+"'>"+gon.store[i].name+"</a>"
 			var lat = gon.store[i].lat
 			var lng = gon.store[i].lng
 			var point = new google.maps.LatLng(

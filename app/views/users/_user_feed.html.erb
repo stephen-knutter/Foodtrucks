@@ -1,0 +1,16 @@
+<div class="feedPane">
+	<% @user.ratings.each do |rating| %>
+		<div class="feedWrap clearfix">
+				<div class="thumbWrap">
+					<%= image_tag rating.store.profile_pic(:thumb), class: "userThumb", alt: rating.user.name %>
+				</div>
+				<div class="userLink">
+					<%= link_to rating.store.name, rating.store, class: "thumbLink", method: :get %>
+					<span class="star star-<%= rating.rating %>">
+						<b><%= rating.created_at.to_s(:easy_date) %></b>
+					</span>
+					<p class="commentText"><%= rating.comment %></p>
+				</div>
+		</div>
+	<% end %>
+</div>

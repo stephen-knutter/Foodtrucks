@@ -1,0 +1,16 @@
+<% provide(:title, "#{@user.name}s photos") %>
+
+<div class="profileContainer clearfix">
+	
+	<div class="leftCnter">
+		<%= render 'user_left_pane', select: {ratings: false, photos: true} %>
+	</div>
+	
+	<div class="rightCnter">
+		<%= render 'user_right_pane' %>
+		<% if logged_in? %>
+			<%= render 'photos/user_photo_form' %>
+		<% end %>
+		
+	</div>
+</div>

@@ -30,6 +30,14 @@ class StoreShowTestTest < ActionDispatch::IntegrationTest
     assert_template 'stores/_rated'
   end
   
+  test "user should only be able to add rating when logged in" do
+    post ratings_path, {store_id: @store.id,
+                        user_id: @user.id, 
+                        comment: "Some rating", 
+                        rating: 5}
+    assert_redirected_to '/login'
+  end
+  
   test "user should be able to edit rating" do
     log_in_as(@user)
     @rating.save
@@ -46,4 +54,15 @@ class StoreShowTestTest < ActionDispatch::IntegrationTest
     assert_equal comment, @rating.comment
     assert_equal rating, @rating.rating
   end
+  
+  test "user should only be able to edit rating when logged in" do
+    @rating.save
+    patch rating_path(@rating), {store_id: @rating.store_id,
+                                 user_id: @rating.user_id,
+                                 comment: @rating.comment,
+                                 rating: @rating.rating}
+    assert_redirected_to '/login'
+  end
+  
+  
 end

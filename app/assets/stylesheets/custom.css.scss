@@ -27,6 +27,16 @@
 	border-radius: 3px;
 }
 
+@mixin border_bottom_radius_3x{
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+@mixin border_top_radius_3x{
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
 .btnSmall{
     color: white;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
@@ -82,9 +92,14 @@
 	@include box_sizing;
 }
 
+.userLinksWrap{
+	margin: 0;
+	padding: 5px 0 1px 0;
+}
+
 .profilePicWrap{
-	width: 200px;
-	height: 180px;
+	width: 190px;
+	height: 190px;
 	margin: 0 auto;
 	padding: 5px;
 	@include brown_border;
@@ -107,27 +122,97 @@
 	padding: 5px;
 }
 
-.profilePic{
+.profilePic, .picPreview{
 	display: block;
 	position: relative;
-	width: 200px;
-	height: 180px;
+	width: 190px;
+	height: 190px;
 	@include box_sizing;
 }
+
+.picPreview{
+	display: inline;
+}
+
 
 .usernameHead{
 	margin: 0;
 	color: #C30C0C;
 }
 
-/*USER SIGN UP*/
-
-.signUpWrap, .loginWrap, .editWrap, .forgotWrap{
+.sideMenu{
+	margin: 20px 0;
 	position: relative;
-	width: 300px;
+	width: 100%;
+	background-color: #E9D4B3;
+	@include brown_border;
 }
 
-.signUpWrap input, .loginWrap input, .editWrap input, .forgotWrap input{
+.menuListing li{
+	width: 100%;
+	padding: 10px 0;
+	border-bottom: 1px solid #d0ba95;
+	font-size: 13px;
+	color: #A97D5D;
+	@include box_sizing;
+}
+
+.menuListing li:last-child{
+	border-bottom: none;
+	@include border_bottom_radius_3x;
+}
+
+.menuListing li:first-child{
+	@include border_top_radius_3x;
+}
+
+#ratingsli, #photosli{
+	padding-left: 20px;
+}
+
+#ratingsli:before,#photosli:before{
+    font-family: FontAwesome;
+	position: relative;
+	color: #A97D5D;
+	left: -5px;
+	top: 2px;
+}
+
+#ratingsli:before{
+    font-size: 20px;
+	content: "\f005";
+}
+
+#photosli:before{
+    font-size: 17px;
+	content: "\f03e";
+}
+
+.menuSelected{
+	background-color: #3B65A7;
+	background-color: #dfd1b9;
+}
+
+#ratingsli.menuSelected, .menuSelected#ratingsli:before{
+	/*color: #fff;*/
+}
+
+/*USER SIGN UP*/
+
+.signUpWrap, 
+.loginWrap, 
+.editWrap, 
+.forgotWrap, 
+.timeWrap{
+	position: relative;
+	width: 320px;
+}
+
+.signUpWrap input, 
+.loginWrap input, 
+.editWrap input, 
+.forgotWrap input,
+.timeWrap .editBtn{
 	width: 100%;
 	display: block;
     margin: 0 0 5px;
@@ -144,6 +229,13 @@
 	@include box_sizing
 }
 
+input#store_profile_pic.uploadPic{
+ border-top-left-radius: 0;
+ border-top-right-radius: 0;
+ border-bottom-left-radius: 3px;
+ border-bottom-right-radius: 3px;
+}
+
 #session_remember_me{
  width: auto;
  display: inline;
@@ -155,7 +247,12 @@
 	font-weight: bold;
 }
 
-.signUpWrap .postBtn, .loginWrap .loginBtn, .editWrap .editBtn, .forgotWrap .forgotBtn, .redBtn{
+.signUpWrap .postBtn, 
+.loginWrap .loginBtn, 
+.editWrap .editBtn, 
+.forgotWrap .forgotBtn, 
+.timeWrap .editBtn,
+.redBtn{
 	margin-top: 20px;
 	color: white;
     border-color: #861202;
@@ -256,6 +353,35 @@ ul.users{
 .userlink, .deleteLink{
 	color: #3b65a7;
 	margin-left: 2px;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+#editLink, #moreLink{
+	padding: 0 2px;
+}
+
+#editLink:before, #moreLink:before, #brewLink:before{
+	font-family: FontAwesome;
+	position: relative;
+	left: -1px;
+}
+
+#brewLink:before{
+	content: "\f275";
+}
+
+#moreLink:before{
+	content: "\f0fc";
+}
+
+#editLink:before{
+	content: "\f040";
+}
+
+#moreLink:before{
 }
 
 .deleteWrap{
@@ -315,4 +441,12 @@ ul.users{
 	color: #A97D5D;
 	font-size: 14px;
 	font-family: georgia, sans-serif;
+}
+
+.menuLink{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: #A97D5D;
 }

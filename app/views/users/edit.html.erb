@@ -19,8 +19,8 @@
 			<%= f.password_field :password_confirmation %>
 			
 			<div class="profilePicBack">
-				<div class="profilePicWrap">
-				 	<%= image_tag(@user.profile_pic.url(:profile), alt: @user.name, class: "profilePic picPreview") %> 
+				<div class="previewPicWrap">
+				 	<%= image_tag(@user.profile_pic.url(:profile), alt: @user.name, class: "picPreview") %> 
 				</div>
 			</div>
 			<%= f.file_field :profile_pic, class: "uploadPic" %>

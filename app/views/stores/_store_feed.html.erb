@@ -1,19 +1,15 @@
 <div class="feedPane">
 	<% @store.ratings.each do |rating| %>
 		<div class="feedWrap clearfix">
-			<div class="feedLeft">
-				<div class="thumbWrap">
-					<%= image_tag rating.user.profile_pic(:thumb), class: "userThumb", alt: rating.user.name %>
-				</div>
-				<div class="userLink">
-					<%= link_to rating.user.name, rating.user, class: "thumbLink" %>
-				</div>
+			<div class="thumbWrap">
+				<%= image_tag rating.user.profile_pic(:thumb), class: "userThumb", alt: rating.user.name %>
 			</div>
-			<div class="feedRight">
-				<span class="star star-<%= rating.rating %>">
-					<b><%= rating.created_at.to_s(:easy_date) %></b>
-				</span>
-				<p class="commentText"><%= rating.comment %></p>
+			<div class="userLink">
+				<%= link_to rating.user.name, rating.user, class: "thumbLink" %>
+				<span class="headDescrip">rated</span><span class="star star-<%= rating.rating %>"><span class="headDescrip">'s</span>
+						<b><%= rating.created_at.to_s(:easy_date) %></b>
+					</span>
+				<span class="commentText"><%= rating.comment %></span>
 			</div>
 		</div>
 	<% end %>

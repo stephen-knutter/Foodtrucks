@@ -1,6 +1,4 @@
-<div class="profilePicWrap">
-	<%= image_tag(@user.profile_pic.url(:profile), alt: @user.name, class: "profilePic") %>
-</div>
+
 <div class="sideMenu">
 	<ul class="menuListing">
 		<% select.each do |m,v| %>
@@ -8,7 +6,7 @@
 				<% if m.to_s == 'ratings' %>
 					<%= link_to "#{m.capitalize}", @user, class: "menuLink" %>
 				<% else %>
-					<%= link_to "#{m.capitalize}", "/users/#{@user.id}/#{m}", class: "menuLink" %>
+					<%= link_to "#{m.capitalize}", "/users/#{@user.id}/#{m}", class: "menuLink", method: :get %>
 				<% end %>
 			</li>
 		<% end %>

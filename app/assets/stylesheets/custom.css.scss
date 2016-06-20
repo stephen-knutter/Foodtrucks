@@ -67,8 +67,8 @@
 	width: 90%;
 	padding: 10px;
 	margin: 45px auto;
-	@include brown_border;
-	color: #A97D5D;
+	@include triple_border;
+	color: #999;
 	border-radius: 3px;
 	@include box_sizing;
 }
@@ -81,14 +81,14 @@
 
 .leftCnter{
 	float: left;
-	width: 25%;
+	width: 65%;
 	@include box_sizing;
 }
 
 .rightCnter{
 	float: left;
-	width: 75%;
-	padding: 0 20px 10px 20px;
+	width: 35%;
+	padding: 0 0 10px 20px;
 	@include box_sizing;
 }
 
@@ -97,14 +97,41 @@
 	padding: 5px 0 1px 0;
 }
 
-.profilePicWrap{
+.headWrap{
+	position: relative;
+	margin: 0 auto;
+	padding: 0 0 50px 0;
+	width: 90%;
+}
+
+.infoWrap{
+	position: relative;
+	float: left;
+	left: 215px;
+}
+
+.profilePicWrap, .previewPicWrap{
 	width: 190px;
 	height: 190px;
-	margin: 0 auto;
 	padding: 5px;
-	@include brown_border;
-	background-color: #F6F2EB;
+	@include triple_border;
+	@include border_radius_3x;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	top: -120px;
+}
+
+.previewPicWrap{
 	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.previewFeedPic{
+	border: none;
+	width: 0;
+	height: 0;
 }
 
 .profilePicBack{
@@ -130,30 +157,30 @@
 	@include box_sizing;
 }
 
-.picPreview{
-	display: inline;
-}
 
 
 .usernameHead{
 	margin: 0;
-	color: #C30C0C;
+	font-size: 2em;
+	font-weight: 500;
+	position: relative;
 }
 
 .sideMenu{
 	margin: 20px 0;
 	position: relative;
 	width: 100%;
-	background-color: #E9D4B3;
-	@include brown_border;
+	background-color: #F5F5F1;
+	@include triple_border;
+	@include box_sizing;
 }
 
 .menuListing li{
 	width: 100%;
 	padding: 10px 0;
-	border-bottom: 1px solid #d0ba95;
+	border-bottom: 1px solid #ddd;
 	font-size: 13px;
-	color: #A97D5D;
+	color: #000;
 	@include box_sizing;
 }
 
@@ -173,7 +200,7 @@
 #ratingsli:before,#photosli:before{
     font-family: FontAwesome;
 	position: relative;
-	color: #A97D5D;
+	color: #6c6c5b;
 	left: -5px;
 	top: 2px;
 }
@@ -189,8 +216,7 @@
 }
 
 .menuSelected{
-	background-color: #3B65A7;
-	background-color: #dfd1b9;
+	background-color: #E5E5E1;
 }
 
 #ratingsli.menuSelected, .menuSelected#ratingsli:before{
@@ -324,8 +350,21 @@ ul.users{
 		text-decoration: underline;
 	}
 	position: relative;
-	top: 15px;
 	left: 5px;
+}
+
+.thumbLink{
+	margin-right: 5px;
+}
+
+.userLink{
+	margin: 5px 0 0 0;
+	padding: 0;
+}
+
+.headDescrip{
+	font-size: 11px;
+	color: #999;
 }
 
 .deleteLink{
@@ -337,8 +376,8 @@ ul.users{
 	height: 50px;
 	margin: 5px 0;
 	padding: 5px;
-	background-color: #F2F0ED;
-	@include brown_border;
+	background-color: #fff;
+	@include triple_border;
 	float: left;
 	border-radius: 3px;
 }
@@ -352,7 +391,6 @@ ul.users{
 
 .userlink, .deleteLink{
 	color: #3b65a7;
-	margin-left: 2px;
 	text-decoration: none;
 	&:hover{
 		text-decoration: underline;
@@ -366,19 +404,6 @@ ul.users{
 #editLink:before, #moreLink:before, #brewLink:before{
 	font-family: FontAwesome;
 	position: relative;
-	left: -1px;
-}
-
-#brewLink:before{
-	content: "\f275";
-}
-
-#moreLink:before{
-	content: "\f0fc";
-}
-
-#editLink:before{
-	content: "\f040";
 }
 
 #moreLink:before{
@@ -448,5 +473,17 @@ ul.users{
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-	color: #A97D5D;
+	color: #333;
+}
+
+#userDivide{
+	padding-top: 20px;
+	margin-bottom: 10px;
+	height: 100px;
+	border-bottom: 1px solid #ddd;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,dddddd+100&0+0,0.65+100 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(221,221,221,0.65) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(221,221,221,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(221,221,221,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6dddddd',GradientType=0 ); /* IE6-9 */
 }

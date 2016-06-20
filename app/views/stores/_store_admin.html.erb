@@ -15,8 +15,8 @@
 			<%= f.label :state %>
 			<%= f.text_field :state %>
 			<div class="profilePicBack">
-				<div class="profilePicWrap">
-				 	<%= image_tag(@store.profile_pic.url(:profile), alt: @store.name, class: "profilePic picPreview")%> 
+				<div class="previewPicWrap">
+				 	<%= image_tag(@store.profile_pic.url(:profile), alt: @store.name, class: "picPreview")%> 
 				</div>
 			</div>
 			<%= f.file_field :profile_pic, class: "uploadPic" %>

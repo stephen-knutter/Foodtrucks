@@ -1,11 +1,11 @@
 <div class="photoFormWrap">
 	<%= form_for @photo, html: {multipart: true} do |f| %>
 		<%= render 'shared/error_messages' %>
-		<%= hidden_field_tag "store_id", 0 %>
-		<%= f.file_field :feed_pic, class: "uploadPic" %>
-		<div id="picPreviewWrap">
-			<img class="picPreview" alt="Add a photo!" />
+		<%= f.hidden_field :store_id, value: 0 %>
+		<%= f.hidden_field :user_id, value: @user.id %>
+		<%= f.file_field :photo, class: "uploadPic" %>
+		<div class="previewPicWrap previewFeedPic">
 		</div>
-		<%= f.submit "Post", class: "btnSmall", disabled: true %>
+		<%= f.submit "Add Photo", class: "btnSmall", id: "addPhotoBtn", disabled: true %>
 	<% end %>
 </div>

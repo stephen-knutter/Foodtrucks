@@ -58,15 +58,13 @@ html, body{
 	margin: 0;
 	padding: 0;
 	font-family: Verdana, Geneva, sans-serif;
-	font-size: 11px;
-	background-color: #F5F5F1;
-	background-color: #F6F2EB;
-	background-color: #F4E7D0;
+	font-size: 13px;
+	background-color: #e9eaed;
 }
 
-.brownBorders{
+.tripleBorders{
 	border: 1px solid;
-	border-color: #dfd1b9 #d7c6a7 #d0ba95;
+	border-color: #d7d9dd #d1d3d8 #c3c4c9;
 }
 
 .mapLink{
@@ -79,17 +77,11 @@ html, body{
 	text-decoration: underline;
 }
 
-.pagination, .pagination a{
-	color: #A97D5D;
-}
-
 .container{
 	width: 920px;
 	padding: 20px;
 	margin: 0 auto;
 	background-color: #fff;
-	background-color: #F6F2EB;
-	/*border: 1px solid #CCCCC8;*/
 	border-radius: 3px;
 	position: relative;
 	top: -2px;
@@ -108,13 +100,18 @@ html, body{
 
 header{
 	margin: 0;
-	padding:20px 0;
+	padding:10px 0;
 	height: 20px;
 	position: relative;
 	width: 100%;
-	background-color: #C30C0C;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c67a1+0,103480+100 */
+	background: #4c67a1; /* Old browsers */
+	background: -moz-linear-gradient(top,  #4c67a1 0%, #103480 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #4c67a1 0%,#103480 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #4c67a1 0%,#103480 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c67a1', endColorstr='#103480',GradientType=0 ); /* IE6-9 */
     box-shadow: 0 0 5px rgba(78,2,2,0.76);
-    border-bottom: 1px solid #900903;
+    border-bottom: 1px solid #103480;
 	z-index: 1;
 }
 
@@ -131,10 +128,14 @@ header{
 	font:  13px 'Oswald', sans-serif;
 	margin: 0;
 	padding: 0;
-	width: 250px;
+	width: 30px;
 	display: inline;
 	position: relative;
-	top:-15px;
+	top:-7px;
+}
+
+#headLogo img{
+	/*width: 130px;*/
 }
 
 #headLogo h1{
@@ -153,7 +154,7 @@ nav{
 #navList{
 	float: left;
 	position: relative;
-	top: -1px;
+	top: -5px;
 }
 
 #navList li{
@@ -166,25 +167,21 @@ nav{
 
 #navList li a{
 	color: #fff;
-	font-size: 12px;
+	font-size: 11px;
 	text-decoration: none;
 	text-shadow: 0 -1px 0 #760400;
-	font-weight: bold;
-}
-
-.homeLink{
 }
 
 #search{
 	border-radius: 3px;
-	padding: 10px;
-	background-color: #F7EEEA;
-	width: 300px;
-	border: 1px solid #900903;
+	padding: 5px;
+	background-color: #fff;
+	width: 320px;
+	border: 1px solid #103480;
 	font-size: 12px;
 	position: relative;
-	top: -12px;
-	left: -75px;
+	top: -4px;
+	left: -355px;
 	outline: none;
 }
 
@@ -270,7 +267,7 @@ nav{
 
 #footer ul li a{
 	text-decoration: none;
-	color: #A97D5D;
+	color: #999;
 }
 
 .signHead{

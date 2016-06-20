@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def photos
     @user = User.find(params[:id])
     @photo = current_user.photos.build if logged_in?
+    @photos = current_user.photos
   end
   
   def new

@@ -6,10 +6,10 @@
 				</div>
 				<div class="userLink">
 					<%= link_to rating.store.name, rating.store, class: "thumbLink", method: :get %>
-					<span class="star star-<%= rating.rating %>">
-						<b><%= rating.created_at.to_s(:easy_date) %></b>
+					<span class="headDescrip">got rated</span><span class="star star-<%= rating.rating %>"><span class="headDescrip">'s</span>
+					<b><%= rating.created_at.to_s(:easy_date) %></b>
 					</span>
-					<p class="commentText"><%= rating.comment %></p>
+					<span class="commentText"><%= rating.comment %></span>
 				</div>
 		</div>
 	<% end %>

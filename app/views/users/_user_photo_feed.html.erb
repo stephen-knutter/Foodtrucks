@@ -1,0 +1,16 @@
+<% if @photos %>
+	<% @photos.each do |p| %>
+		<% if !p.photo.blank? %>
+		<div class="feedWrap clearfix">
+			<div class="thumbWrap">
+				<%= image_tag @user.profile_pic.url(:thumb), class: "userThumb", alt: @user.name %>
+			</div>
+			<div class="userLink">
+				<%= link_to @user.name, @user, class: "thumbLink", method: :get %>
+				<span class="commdate">added a photo on <b><%= p.created_at.to_s(:easy_date) %></b></span>
+			</div>
+			<div class="commentPic"><%= image_tag p.photo.url(:feed) %></div>
+		</div>
+		<% end %>
+	<% end %>
+<% end %>

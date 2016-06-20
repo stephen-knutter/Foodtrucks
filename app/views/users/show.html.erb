@@ -1,13 +1,30 @@
 <% provide(:title, @user.name) %>
-
+<div id="userDivide">
+</div>
+<div class="headWrap clearfix">
+	<div class="profilePicWrap">
+		<%= image_tag(@user.profile_pic.url(:profile), alt: @user.name, class: "profilePic") %>
+	</div>
+	<div class="infoWrap">
+		<h1 class="usernameHead"><%= @user.name %></h1>
+		<div class="userLinksWrap">
+		<% if @user == current_user %>
+			<i class="fa fa-pencil"></i><%= link_to "Edit", edit_user_path(@user), class: "userlink", id: "editLink", method: :get %>
+			<i class="fa fa-users"></i><%= link_to "More Drinkers", users_path, class: "userlink", id: "moreLink" %>
+			<i class="fa fa-beer"></i><% if @user.store_id %>
+				<%= link_to "Your Brewery", store_path(@user.store_id), class: "userlink", id: "brewLink", method: :get %>
+			<% end %>
+		<% end %>
+		</div>
+	</div>
+</div>
 <div class="profileContainer clearfix">
 	
 	<div class="leftCnter">
-		<%= render 'user_left_pane', select: {ratings: true, photos: false} %>
+		<%= render 'user_feed' %>
 	</div>
 	
 	<div class="rightCnter">
-		<%= render 'user_right_pane' %>
-		<%= render 'user_feed' %>
+		<%= render 'user_left_pane', select: {ratings: true, photos: false} %>
 	</div>
 </div>

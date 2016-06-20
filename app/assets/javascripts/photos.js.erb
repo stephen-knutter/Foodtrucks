@@ -1,6 +1,9 @@
 $(function(){
 	if(typeof FileReader !== undefined){
-		var preview = $(".picPreview");
+		//var preview = $(".picPreview");
+		var preview = $(".previewPicWrap");
+		var pic = $("<img>");
+		var picbtn = $("#addPhotoBtn");
 		$("body").on("change", ".uploadPic", function(event){
 			var elem = $(this);
 			var input = $(event.currentTarget);
@@ -8,7 +11,11 @@ $(function(){
 			var reader = new FileReader();
 			reader.onload = function(e){
 				image_base64 = e.target.result;
-				preview.attr("src", image_base64);
+				//preview.attr("src", image_base64);
+				pic.attr({"src": image_base64, "class": "picPreview"});
+				preview.html("").append(pic).css({"width":190+"px", 
+				                                  "height":190+"px", });
+				picbtn.attr("disabled",false);
 			}
 			reader.readAsDataURL(file);
 		});

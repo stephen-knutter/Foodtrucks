@@ -17,13 +17,13 @@
 <body>
 <%= render 'layouts/header' %>
 <div class="container tripleBorders">
-	
+
 	<% flash.each do |type,message| %>
 		<div class="<%= type %>">
 			<%= message %>
 		</div>
 	<% end %>
-	
+
 	<%= yield %>
 </div>
 <%= render 'layouts/footer' %>

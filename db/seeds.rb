@@ -7,8 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!(name: "Wayne Gretzkey",
-             email: "wayne@kings.com",
-             profile_pic: "no-profile.png",
+             email: "wayne-gretz@kings.com",
              password: "hamsandwich",
              password_confirmation: "hamsandwich")
 
@@ -16,16 +15,14 @@ User.create!(name: "Wayne Gretzkey",
   name = Faker::Name.name
   email = "beer-#{n+1}@beermaps.com"
   password = "hamsandwich"
-  pic = "no-profile.png"
   User.create!(name: name,
                email: email,
-               profile_pic: pic,
                password: password,
                password_confirmation: password)
 end
 
 Store.create!(name: "Denver Beer Co",
-              email: "NULL",
+              email: "denver@beer.com",
               address: "1695 Platte St",
               city: "Denver",
               state: "Colorado",

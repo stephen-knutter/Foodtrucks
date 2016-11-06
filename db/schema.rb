@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160511014423) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "hours", force: true do |t|
     t.integer  "store_id"
     t.string   "mon_o_hour",     default: "00"
@@ -78,7 +81,7 @@ ActiveRecord::Schema.define(version: 20160511014423) do
     t.string   "slug"
   end
 
-  add_index "maps", ["slug"], name: "index_maps_on_slug"
+  add_index "maps", ["slug"], name: "index_maps_on_slug", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "store_id"
@@ -92,8 +95,8 @@ ActiveRecord::Schema.define(version: 20160511014423) do
     t.datetime "photo_updated_at"
   end
 
-  add_index "photos", ["store_id"], name: "index_photos_on_store_id"
-  add_index "photos", ["user_id"], name: "index_photos_on_user_id"
+  add_index "photos", ["store_id"], name: "index_photos_on_store_id", using: :btree
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "ratings", force: true do |t|
     t.integer  "store_id"
@@ -130,26 +133,24 @@ ActiveRecord::Schema.define(version: 20160511014423) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "password_digest"
-    t.string   "profile_pic",              default: "no-profile.png"
+    t.string   "profile_pic",       default: "no-profile.png"
     t.string   "remember_digest"
-    t.boolean  "admin",                    default: false
-    t.string   "profile_pic_file_name"
-    t.string   "profile_pic_content_type"
-    t.integer  "profile_pic_file_size"
-    t.datetime "profile_pic_updated_at"
+    t.boolean  "admin",             default: false
     t.string   "activation_digest"
-    t.boolean  "activated",                default: false
+    t.boolean  "activated",         default: false
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
-    t.integer  "store_id",                 default: 0
+    t.integer  "store_id",          default: 0
     t.string   "location"
-    t.boolean  "store_admin",              default: false
+    t.boolean  "store_admin",       default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "photos", "stores"
+  add_foreign_key "photos", "users"
 end

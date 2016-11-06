@@ -12,13 +12,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders', '~> 2.0'
 gem 'friendly_id', '~> 5.1'
 gem 'gon', '~> 6.0', '>= 6.0.1'
-gem 'rabl-rails', '~> 0.4.1'
+gem 'rabl-rails', '~> 0.4.3'
 gem 'puma', '2.11.1'
 gem 'will_paginate', '3.0.7'
-gem 'paperclip', '~> 4.3', '>= 4.3.5'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'pg', '~> 0.19.0'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.9'
   gem 'byebug'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring'
@@ -32,6 +32,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end

@@ -39,3 +39,11 @@ test:
 # production:
 #   <<: *default
 #   database: db/production.sqlite3
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: postgres://mkagiyevhpatna:qTWLZ25rkUyaaZd5mm2ckDqfMG@ec2-54-243-201-107.compute-1.amazonaws.com:5432/d28lmv0ualvrit
+  pool: 5
+  username:
+  password:

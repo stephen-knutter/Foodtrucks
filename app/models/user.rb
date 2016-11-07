@@ -18,15 +18,15 @@ class User < ActiveRecord::Base
              presence: true,
              length: { minimum: 6 },
              allow_nil: true #for edit->update....has_secure_password will reject nil for signup
-  has_attached_file :profile_pic,
-                     default_url: ":style-no-profile.png",
-                     styles: {profile: "190x190#", thumb: "45x45#"},
-                     url: "/assets/users/:id/:style/:basename.:extension",
-                     path: ":rails_root/public/assets/users/:id/:style/:basename.:extension"
+  # has_attached_file :profile_pic,
+  #                    default_url: ":style-no-profile.png",
+  #                    styles: {profile: "190x190#", thumb: "45x45#"},
+  #                    url: "/assets/users/:id/:style/:basename.:extension",
+  #                    path: ":rails_root/public/assets/users/:id/:style/:basename.:extension"
                      #validates_attachment_presence :profile_pic
                      #validates_attachment_size :profile_pic, less_than: 100.megabytes
-  validates_attachment_content_type :profile_pic,
-                                     content_type: ["image/jpeg", "image/jpg", "image/png", "image/gif"]
+  # validates_attachment_content_type :profile_pic,
+  #                                    content_type: ["image/jpeg", "image/jpg", "image/png", "image/gif"]
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

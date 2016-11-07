@@ -32,5 +32,6 @@ group :test do
 end
 
 group :production do
+  gem 'rake', '~> 11.2', '>= 11.2.2'
   gem 'rails_12factor', '~> 0.0.3'
 end

@@ -48,4 +48,5 @@ test:
 
 production:
     <<: *default
-    database: "postgresql-lively-78691"
+    database: postgresql-lively-78691
+    host: localhost

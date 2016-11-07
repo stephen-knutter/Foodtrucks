@@ -17,12 +17,12 @@ gem 'puma', '2.11.1'
 gem 'will_paginate', '3.0.7'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'pg', '~> 0.19.0'
+gem 'faker', '1.4.2'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring'
-  gem 'faker', '1.4.2'
 end
 
 group :test do

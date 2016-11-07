@@ -17,6 +17,7 @@ gem 'puma', '2.11.1'
 gem 'will_paginate', '3.0.7'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'pg', '~> 0.19.0'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
@@ -29,9 +30,4 @@ group :test do
   gem 'minitest-reporters', '1.0.5'
   gem 'mini_backtrace', '0.1.3'
   gem 'guard-minitest', '2.3.1'
-end
-
-group :production do
-  gem 'rake', '~> 10.5', '>= 10.5.0'
-  gem 'rails_12factor', '~> 0.0.3'
 end

@@ -244,6 +244,7 @@ DEPENDENCIES
   rabl-rails (~> 0.4.3)
   rails (= 4.2.0.rc3)
   rails_12factor (~> 0.0.3)
+  rake (~> 10.5, >= 10.5.0)
   responders (~> 2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

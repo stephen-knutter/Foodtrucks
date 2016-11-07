@@ -7,9 +7,9 @@
 	i.fa.fa-industry{
 		color: #3b65a7;
 		font-size: 15px;
-		margin: 0 2px 0 8px;
+		margin: 0 2px 0 3px;
 	}
-	i.fa.fa-hand-o-up, 
+	i.fa.fa-hand-o-up,
 	i.fa.fa-pencil,
 	i.fa.fa-beer,
 	i.fa.fa-users{
@@ -17,7 +17,7 @@
 		font-size: 15px;
 		margin-right: 1px;
 	}
-	
+
 	i.fa.fa-beer{
 		font-size: 17.5px;
 		position: relative;
@@ -157,7 +157,7 @@
 
 .head-text{
 	margin: 1px 0;
-	padding: 5px;
+	padding: 5px 5px 5px 0;
 	color: #3b65a7;
 	@include box_sizing;
 }
@@ -250,6 +250,10 @@
 
 .star-1{
 	background: url('stars_all.png') 0 -21px no-repeat;
+}
+
+.star-0{
+	background: url('stars_all.png') 0 -2px no-repeat;
 }
 
 .timeWrap{

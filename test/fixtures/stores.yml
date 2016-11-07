@@ -16,6 +16,6 @@ beerco:
     store_type: devdtn
     password_digest: "$2a$10$JjJVAlEb2.MAAZQHgP/6h.43E47Di3TpoQu8nfW7SVSv46CecGpRS"
     map_id: 1
-    profile_pic: no-brewery.png
+    profile_pic: no-truck.png
     website: www.fake.com
     phone: 555-555-5555

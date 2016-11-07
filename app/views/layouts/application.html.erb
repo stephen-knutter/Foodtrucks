@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= do_title(yield(:title)) %></title>
-  <%= Gon::Base.render_data({}) %>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.14&sensor=false"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-  <![endif]-->
-</head>
-<body>
-<%= render 'layouts/header' %>
-<div class="container tripleBorders">
+  <head>
+    <title><%= do_title(yield(:title)) %></title>
+    <%= Gon::Base.render_data({}) %>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrNHfpG00Mz7LYzHZkSZD0X0bgugkOzmY"></script>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+        </script>
+    <![endif]-->
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    
+    <div class="container tripleBorders">
 
-	<% flash.each do |type,message| %>
-		<div class="<%= type %>">
-			<%= message %>
-		</div>
-	<% end %>
+    	<% flash.each do |type,message| %>
+    		<div class="<%= type %>">
+    			<%= message %>
+    		</div>
+    	<% end %>
 
-	<%= yield %>
-</div>
-<%= render 'layouts/footer' %>
-<%= debug(params) if Rails.env.development? %>
-</body>
+    	<%= yield %>
+    </div>
+
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
+  </body>
 </html>

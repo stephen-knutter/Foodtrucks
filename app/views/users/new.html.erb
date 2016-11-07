@@ -1,22 +1,22 @@
 <% provide(:title, 'Sign Up') %>
 <div class="signUpWrap">
-	<h1 class="signHead">Sign Up For BeerMaps</h1>
+	<h1 class="signHead">Sign Up</h1>
 	<div class="signUpForm">
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_messages' %>
-		
+
 			<%= f.label :name %>
 			<%= f.text_field :name, placeholder: "Username" %>
-		
+
 			<%= f.label :email %>
 			<%= f.email_field :email, placeholder: "Email" %>
-		
+
 			<%= f.label :password %>
 			<%= f.password_field :password, placeholder: "Password" %>
-		
+
 			<%= f.label :password_confirmation, "Confimration" %>
 			<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-		
+
 			<%= f.submit "Sign Up", class: "postBtn" %>
 			<% end %>
 	</div>

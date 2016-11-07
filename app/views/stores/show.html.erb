@@ -15,6 +15,11 @@
 				<i class="fa fa-pencil"></i><%= link_to "Edit #{@store.name}", edit_store_path(@store), class: "claimLink", method: :get %>
 			</div>
 		<% end %>
+		<span class="store-address head-text">
+			<i class="fa fa-industry"></i><%= @store.address %>, <%= @store.city %>, <%= @store.state %>
+			<br/>
+			<span class="starhead star-<%= @store.ratings.sum(:rating) %>"><%= @store.ratings.sum(:rating) %>.0 (<%= pluralize(@store.ratings.count, "Review") %>)</span>
+		</span>
 	</div>
 </div>
 <div class="profileContainer clearfix">
@@ -30,14 +35,14 @@
 		<% end %>
 		<%= render 'store_feed' %>
 	</div>
-	
+
 	<div class="rightCnter">
 		<div class="info-wrap">
-			<span class="store-address head-text">
+			<!-- <span class="store-address head-text">
 		    <span class="starhead star-<%= @store.ratings.sum(:rating) %>"><%= @store.ratings.sum(:rating) %>.0 (<%= pluralize(@store.ratings.count, "Review") %>)</span>
 			<br/>
 			<i class="fa fa-industry"></i><%= @store.address %>, <%= @store.city %>, <%= @store.state %>
-			</span>
+			</span> -->
 			<span class="store-phone head-text"></span>
 			<span class="store-website head-text"></span>
 		</div>

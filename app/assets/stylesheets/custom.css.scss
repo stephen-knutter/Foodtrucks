@@ -108,6 +108,11 @@
 	position: relative;
 	float: left;
 	left: 215px;
+	top: -5px;
+}
+
+.infoWrap i{
+	padding-bottom: 5px;
 }
 
 .profilePicWrap, .previewPicWrap{
@@ -225,18 +230,18 @@
 
 /*USER SIGN UP*/
 
-.signUpWrap, 
-.loginWrap, 
-.editWrap, 
-.forgotWrap, 
+.signUpWrap,
+.loginWrap,
+.editWrap,
+.forgotWrap,
 .timeWrap{
 	position: relative;
 	width: 320px;
 }
 
-.signUpWrap input, 
-.loginWrap input, 
-.editWrap input, 
+.signUpWrap input,
+.loginWrap input,
+.editWrap input,
 .forgotWrap input,
 .timeWrap .editBtn{
 	width: 100%;
@@ -273,10 +278,10 @@ input#store_profile_pic.uploadPic{
 	font-weight: bold;
 }
 
-.signUpWrap .postBtn, 
-.loginWrap .loginBtn, 
-.editWrap .editBtn, 
-.forgotWrap .forgotBtn, 
+.signUpWrap .postBtn,
+.loginWrap .loginBtn,
+.editWrap .editBtn,
+.forgotWrap .forgotBtn,
 .timeWrap .editBtn,
 .redBtn{
 	margin-top: 20px;
@@ -336,7 +341,7 @@ ul.users{
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-		
+
 	li{
 		padding: 0;
 	}

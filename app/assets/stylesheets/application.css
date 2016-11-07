@@ -98,6 +98,10 @@ html, body{
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
+.head-icon-image {
+	width: 190px;
+}
+
 header{
 	margin: 0;
 	padding:10px 0;
@@ -110,8 +114,8 @@ header{
 	background: -webkit-linear-gradient(top,  #4c67a1 0%,#103480 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  #4c67a1 0%,#103480 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c67a1', endColorstr='#103480',GradientType=0 ); /* IE6-9 */
-    box-shadow: 0 0 5px rgba(78,2,2,0.76);
-    border-bottom: 1px solid #103480;
+  box-shadow: 0 0 5px rgba(78,2,2,0.76);
+  border-bottom: 1px solid #103480;
 	z-index: 1;
 }
 
@@ -273,5 +277,3 @@ nav{
 .signHead{
 	color: #C41200;
 }
-
-

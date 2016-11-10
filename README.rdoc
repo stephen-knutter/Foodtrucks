@@ -1,3 +1,0 @@
-== README
-
-Foodtruck mapping application includes maps by region,ratings, photo upload & cropping...still WIP

@@ -1,0 +1,20 @@
+<div class="rating-wrap">
+	<%= form_for :rating, url: ratings_path do |f| %>
+		<%= hidden_field_tag :store_id, @store.id %>
+		<div class="stars clearfix">
+			<div>
+				<ul class="stars-0" id="starList">
+					<li id="stars-1"><input id="rating-1" class="rating" name="rating" type="radio" value=1 /></li>
+					<li id="stars-2"><input id="rating-2" class="rating" name="rating" type="radio" value=2 /></li>
+					<li id="stars-3"><input id="rating-3" class="rating" name="rating" type="radio" value=3 /></li>
+					<li id="stars-4"><input id="rating-4" class="rating" name="rating" type="radio" value=4 /></li>
+					<li id="stars-5"><input id="rating-5" class="rating" name="rating" type="radio" value=5 /></li>
+				</ul>
+			</div>
+		</div>
+		<div class="text-wrap">
+			<textarea autocomplete="off" id="comment" name="comment" placeholder="Write a review.."></textarea>
+		</div>
+		<%= f.submit "Post Review", class: "btnSmall" %>
+	<% end %>
+</div>

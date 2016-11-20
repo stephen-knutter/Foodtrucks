@@ -1,17 +1,17 @@
 class RatingsController < ApplicationController
     before_action :logged_in_user, only: [:create,:update]
-    
+
     def create
        @rating = Rating.new(rating_params)
        @store =  @rating.store
         if @rating.save
           flash[:success] = 'Rating successfully added!'
-        else 
+        else
           flash[:danger] = 'Rating could not be saved'
         end
         redirect_to @store
     end
-    
+
     def update
       @rating = Rating.find(params[:id])
       @store = @rating.store
@@ -22,7 +22,7 @@ class RatingsController < ApplicationController
       end
       redirect_to @store
     end
-    
+
      private
      def rating_params
        params.permit(:store_id,:user_id,:comment,:rating)

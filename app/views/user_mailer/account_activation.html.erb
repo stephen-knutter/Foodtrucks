@@ -1,9 +1,9 @@
-<h1>BeerMaps</h1>
+<h1>Foodtruck Maps</h1>
 
 <p>Hello <%= @user.name %></p>
 
 <p>
-	Welcome to BeerMaps! Click on the link below to activate your account
+	Welcome to Foodtruck Maps! Click on the link below to activate your account
 </p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
